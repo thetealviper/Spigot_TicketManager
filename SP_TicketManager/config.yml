@@ -1,0 +1,789 @@
+##########################################################
+#                  TicketManager Config                  #
+#Index: (ctrl + f)                                       #
+# - Player Ticket Setup                                  #
+# - Player Create Ticket Setup                           #
+# - Player Open Tickets Setup                            #
+# - Player Closed Tickets Setup                          #
+# - Player View Ticket Setup                             #
+# - Staff Ticket Setup                                   #
+# - Staff Open Tickets Setup                             #
+# - Staff Closed Tickets Setup                           #
+# - Staff Category One Tickets Setup                     #
+# - Staff Category Two Tickets Setup                     #
+# - Staff Category Three Tickets Setup                   #
+# - Staff Category Four Tickets Setup                    #
+# - Staff Category Five Tickets Setup                    #
+# - Ticket View Setup                                    #
+# - Permissions                                          #
+# - Version                                              #
+##########################################################
+
+Command_Aliases:
+ - tm
+ - report
+ 
+Use_SQL: false
+SQL_Host: "host.com"
+SQL_Database: "database"
+SQL_Username: "user"
+SQL_Password: "pass"
+SQL_Port: 3306
+
+GUI_Click: true
+
+Category_One: "Bug"
+Category_Two: "Chat Abuse"
+Category_Three: "Staff Abuse"
+Category_Four: "Suggestion"
+Category_Five: "Other"
+
+Whisper_Command: "whisper"
+
+##########################################################
+#                  Player Ticket Setup                   #
+##########################################################
+
+PlayerTicketGUI_Name: "[&cTM&r] "
+
+PlayerTicketGUI_CreateTicket:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&aCreate Ticket"
+ lore:
+  - "&r&7Click me to create a ticket"
+  
+PlayerTicketGUI_OpenTickets:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&aView Your Open Tickets"
+ lore:
+  - "&r&7Click me to view your open tickets"
+  
+PlayerTicketGUI_ClosedTickets:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&aView Your Closed Tickets"
+ lore:
+  - "&r&7Click me to view your closed tickets"
+
+PlayerTicketGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+
+##########################################################
+#              Player Create Ticket Setup                #
+##########################################################
+
+PlayerCreateTicketGUI_Name: "[&cTM&r] "
+
+PlayerCreateTicketGUI_CategoryOneUnselected:
+ id: "PUMPKIN"
+ name: "&r%categoryone%"
+
+PlayerCreateTicketGUI_CategoryOneSelected:
+ id: "JACK_O_LANTERN"
+ name: "&r&l%categoryone%"
+ 
+PlayerCreateTicketGUI_CategoryTwoUnselected:
+ id: "PUMPKIN"
+ name: "&r%categorytwo%"
+
+PlayerCreateTicketGUI_CategoryTwoSelected:
+ id: "JACK_O_LANTERN"
+ name: "&r&l%categorytwo%"
+ 
+PlayerCreateTicketGUI_CategoryThreeUnselected:
+ id: "PUMPKIN"
+ name: "&r%categorythree%"
+
+PlayerCreateTicketGUI_CategoryThreeSelected:
+ id: "JACK_O_LANTERN"
+ name: "&r&l%categorythree%"
+ 
+PlayerCreateTicketGUI_CategoryFourUnselected:
+ id: "PUMPKIN"
+ name: "&r%categoryfour%"
+
+PlayerCreateTicketGUI_CategoryFourSelected:
+ id: "JACK_O_LANTERN"
+ name: "&r&l%categoryfour%"
+ 
+PlayerCreateTicketGUI_CategoryFiveUnselected:
+ id: "PUMPKIN"
+ name: "&r%categoryfive%"
+
+PlayerCreateTicketGUI_CategoryFiveSelected:
+ id: "JACK_O_LANTERN"
+ name: "&r&l%categoryfive%"
+ 
+PlayerCreateTicketGUI_CategoryFillerUnselected:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&lCategory"
+ lore:
+  - "&r&7Please select a category"
+
+PlayerCreateTicketGUI_CategoryFillerSelected:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&lCategory"
+ 
+PlayerCreateTicketGUI_ImportanceOneUnselected:
+ id: "PUMPKIN"
+ name: "&r1"
+
+PlayerCreateTicketGUI_ImportanceOneSelected:
+ id: "JACK_O_LANTERN"
+ name: "&r&l1"
+ 
+PlayerCreateTicketGUI_ImportanceTwoUnselected:
+ id: "PUMPKIN"
+ name: "&r2"
+
+PlayerCreateTicketGUI_ImportanceTwoSelected:
+ id: "JACK_O_LANTERN"
+ name: "&r&l2"
+ 
+PlayerCreateTicketGUI_ImportanceThreeUnselected:
+ id: "PUMPKIN"
+ name: "&r3"
+
+PlayerCreateTicketGUI_ImportanceThreeSelected:
+ id: "JACK_O_LANTERN"
+ name: "&r&l3"
+ 
+PlayerCreateTicketGUI_ImportanceFourUnselected:
+ id: "PUMPKIN"
+ name: "&r4"
+
+PlayerCreateTicketGUI_ImportanceFourSelected:
+ id: "JACK_O_LANTERN"
+ name: "&r&l4"
+ 
+PlayerCreateTicketGUI_ImportanceFiveUnselected:
+ id: "PUMPKIN"
+ name: "&r5"
+
+PlayerCreateTicketGUI_ImportanceFiveSelected:
+ id: "JACK_O_LANTERN"
+ name: "&r&l5"
+ 
+PlayerCreateTicketGUI_ImportanceFillerUnselected:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&lImportance"
+ lore:
+  - "&r&7Please select an importance"
+
+PlayerCreateTicketGUI_ImportanceFillerSelected:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&lImportance"
+ 
+PlayerCreateTicketGUI_FinalizeUnready:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&lCreate Ticket"
+ lore:
+  - "&r&7Please select a category and importance"
+  
+PlayerCreateTicketGUI_FinalizeReady:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&lCreate Ticket"
+ lore:
+  - "&r&7Click me to write your ticket message and complete creation"
+
+##########################################################
+#               Player Open Tickets Setup                #
+##########################################################
+
+PlayerOpenTicketsGUI_Name: "[&cTM&r] "
+
+PlayerOpenTicketsGUI_Back:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+
+PlayerOpenTicketsGUI_PreviousPage:
+ id: "PAPER"
+ name: "&rPrevious Page"
+ lore:
+  - "&r&7Click me to open the previous page"
+
+#PlayerOpenTicketsGUI_CurrentPage:
+#This can't be configured as of now. Sorry.
+
+PlayerOpenTicketsGUI_NextPage:
+ id: "PAPER"
+ name: "&rNext Page"
+ lore:
+  - "&r&7Click me to open the next page"
+
+PlayerOpenTicketsGUI_Book:
+ id: "BOOK"
+ name: "&r&6&lExplanation"
+ lore:
+  - "&r&7This GUI holds your tickets which are currently open."
+  - "&r&7Click on any of them to make changes or view more details."
+  - "&r&7You can also click the back button to return to the main menu."
+
+PlayerOpenTicketsGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+ 
+##########################################################
+#              Player Closed Tickets Setup               #
+##########################################################
+
+PlayerClosedTicketsGUI_Name: "[&cTM&r] "
+
+PlayerClosedTicketsGUI_Back:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+
+PlayerClosedTicketsGUI_PreviousPage:
+ id: "PAPER"
+ name: "&rPrevious Page"
+ lore:
+  - "&r&7Click me to open the previous page"
+
+#PlayerClosedTicketsGUI_CurrentPage:
+#This can't be configured as of now. Sorry.
+
+PlayerClosedTicketsGUI_NextPage:
+ id: "PAPER"
+ name: "&rNext Page"
+ lore:
+  - "&r&7Click me to open the next page"
+
+PlayerClosedTicketsGUI_Book:
+ id: "BOOK"
+ name: "&r&6&lExplanation"
+ lore:
+  - "&r&7This GUI holds your tickets which are currently closed."
+  - "&r&7Click on any of them to make changes or view more details."
+  - "&r&7You can also click the back button to return to the main menu."
+
+PlayerClosedTicketsGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+
+##########################################################
+#                   Staff Ticket Setup                   #
+##########################################################
+
+StaffTicketGUI_Name: "[&cTM&r] "
+
+StaffTicketGUI_OpenTickets:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&aAll Open Tickets"
+ lore:
+  - "&r&7Click me to view all open tickets"
+
+StaffTicketGUI_ClosedTickets:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&aAll Closed Tickets"
+ lore:
+  - "&r&7Click me to view all closed tickets"
+
+StaffTicketGUI_CategoryOneTickets:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&aView %categoryone% Category"
+ lore:
+  - "&r&7Click me to view open %categoryone_lowercase% tickets by date"
+
+StaffTicketGUI_CategoryTwoTickets:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&aView %categorytwo% Category"
+ lore:
+  - "&r&7Click me to view open %categorytwo_lowercase% tickets by date"
+
+StaffTicketGUI_CategoryThreeTickets:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&aView %categorythree% Category"
+ lore:
+  - "&r&7Click me to view open %categorythree_lowercase% tickets by date"
+
+StaffTicketGUI_CategoryFourTickets:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&aView %categoryfour% Category"
+ lore:
+  - "&r&7Click me to view open %categoryfour_lowercase% tickets by date"
+
+StaffTicketGUI_CategoryFiveTickets:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&aView %categoryfive% Category"
+ lore:
+  - "&r&7Click me to view open %categoryfive_lowercase% tickets by date"
+
+StaffTicketGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+
+##########################################################
+#                Staff Open Tickets Setup                #
+##########################################################
+
+StaffOpenTicketsGUI_Name: "[&cTM&r] "
+
+StaffOpenTicketsGUI_Back:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+
+StaffOpenTicketsGUI_PreviousPage:
+ id: "PAPER"
+ name: "&rPrevious Page"
+ lore:
+  - "&r&7Click me to open the previous page"
+
+#StaffOpenTicketsGUI_CurrentPage:
+#This can't be configured as of now. Sorry.
+
+StaffOpenTicketsGUI_NextPage:
+ id: "PAPER"
+ name: "&rNext Page"
+ lore:
+  - "&r&7Click me to open the next page"
+
+StaffOpenTicketsGUI_Book:
+ id: "BOOK"
+ name: "&r&6&lExplanation"
+ lore:
+  - "&r&7This GUI holds all tickets which are currently open."
+  - "&r&7Click on any of them to make changes or view more details."
+  - "&r&7You can also click the back button to return to the main menu."
+
+StaffOpenTicketsGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+ 
+##########################################################
+#               Staff Closed Tickets Setup               #
+##########################################################
+
+StaffClosedTicketsGUI_Name: "[&cTM&r] "
+
+StaffClosedTicketsGUI_Back:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+
+StaffClosedTicketsGUI_PreviousPage:
+ id: "PAPER"
+ name: "&rPrevious Page"
+ lore:
+  - "&r&7Click me to open the previous page"
+
+#StaffClosedTicketsGUI_CurrentPage:
+#This can't be configured as of now. Sorry.
+
+StaffClosedTicketsGUI_NextPage:
+ id: "PAPER"
+ name: "&rNext Page"
+ lore:
+  - "&r&7Click me to open the next page"
+
+StaffClosedTicketsGUI_Book:
+ id: "BOOK"
+ name: "&r&6&lExplanation"
+ lore:
+  - "&r&7This GUI holds all tickets which are currently closed."
+  - "&r&7Click on any of them to make changes or view more details."
+  - "&r&7You can also click the back button to return to the main menu."
+
+StaffClosedTicketsGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+ 
+##########################################################
+#            Staff Category One Tickets Setup            #
+##########################################################
+
+StaffCategoryOneTicketsGUI_Name: "[&cTM&r] "
+
+StaffCategoryOneTicketsGUI_Back:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+
+StaffCategoryOneTicketsGUI_PreviousPage:
+ id: "PAPER"
+ name: "&rPrevious Page"
+ lore:
+  - "&r&7Click me to open the previous page"
+
+#StaffCategoryOneTicketsGUI_CurrentPage:
+#This can't be configured as of now. Sorry.
+
+StaffCategoryOneTicketsGUI_NextPage:
+ id: "PAPER"
+ name: "&rNext Page"
+ lore:
+  - "&r&7Click me to open the next page"
+
+StaffCategoryOneTicketsGUI_Book:
+ id: "BOOK"
+ name: "&r&6&lExplanation"
+ lore:
+  - "&r&7This GUI holds all open %categoryone_lowercase% tickets."
+  - "&r&7Click on any of them to make changes or view more details."
+  - "&r&7You can also click the back button to return to the main menu."
+
+StaffCategoryOneTicketsGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+ 
+##########################################################
+#            Staff Category Two Tickets Setup            #
+##########################################################
+
+StaffCategoryTwoTicketsGUI_Name: "[&cTM&r] "
+
+StaffCategoryTwoTicketsGUI_Back:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+
+StaffCategoryTwoTicketsGUI_PreviousPage:
+ id: "PAPER"
+ name: "&rPrevious Page"
+ lore:
+  - "&r&7Click me to open the previous page"
+
+#StaffCategoryTwoTicketsGUI_CurrentPage:
+#This can't be configured as of now. Sorry.
+
+StaffCategoryTwoTicketsGUI_NextPage:
+ id: "PAPER"
+ name: "&rNext Page"
+ lore:
+  - "&r&7Click me to open the next page"
+
+StaffCategoryTwoTicketsGUI_Book:
+ id: "BOOK"
+ name: "&r&6&lExplanation"
+ lore:
+  - "&r&7This GUI holds all open %categorytwo_lowercase% tickets."
+  - "&r&7Click on any of them to make changes or view more details."
+  - "&r&7You can also click the back button to return to the main menu."
+
+StaffCategoryTwoTicketsGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+ 
+##########################################################
+#            Staff Category Three Tickets Setup            #
+##########################################################
+
+StaffCategoryThreeTicketsGUI_Name: "[&cTM&r] "
+
+StaffCategoryThreeTicketsGUI_Back:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+
+StaffCategoryThreeTicketsGUI_PreviousPage:
+ id: "PAPER"
+ name: "&rPrevious Page"
+ lore:
+  - "&r&7Click me to open the previous page"
+
+#StaffCategoryThreeTicketsGUI_CurrentPage:
+#This can't be configured as of now. Sorry.
+
+StaffCategoryThreeTicketsGUI_NextPage:
+ id: "PAPER"
+ name: "&rNext Page"
+ lore:
+  - "&r&7Click me to open the next page"
+
+StaffCategoryThreeTicketsGUI_Book:
+ id: "BOOK"
+ name: "&r&6&lExplanation"
+ lore:
+  - "&r&7This GUI holds all open %categorythree_lowercase% tickets."
+  - "&r&7Click on any of them to make changes or view more details."
+  - "&r&7You can also click the back button to return to the main menu."
+
+StaffCategoryThreeTicketsGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+
+##########################################################
+#            Staff Category Four Tickets Setup            #
+##########################################################
+
+StaffCategoryFourTicketsGUI_Name: "[&cTM&r] "
+
+StaffCategoryFourTicketsGUI_Back:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+
+StaffCategoryFourTicketsGUI_PreviousPage:
+ id: "PAPER"
+ name: "&rPrevious Page"
+ lore:
+  - "&r&7Click me to open the previous page"
+
+#StaffCategoryFourTicketsGUI_CurrentPage:
+#This can't be configured as of now. Sorry.
+
+StaffCategoryFourTicketsGUI_NextPage:
+ id: "PAPER"
+ name: "&rNext Page"
+ lore:
+  - "&r&7Click me to open the next page"
+
+StaffCategoryFourTicketsGUI_Book:
+ id: "BOOK"
+ name: "&r&6&lExplanation"
+ lore:
+  - "&r&7This GUI holds all open %categoryfour_lowercase% tickets."
+  - "&r&7Click on any of them to make changes or view more details."
+  - "&r&7You can also click the back button to return to the main menu."
+
+StaffCategoryFourTicketsGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+ 
+##########################################################
+#            Staff Category Five Tickets Setup            #
+##########################################################
+
+StaffCategoryFiveTicketsGUI_Name: "[&cTM&r] "
+
+StaffCategoryFiveTicketsGUI_Back:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+
+StaffCategoryFiveTicketsGUI_PreviousPage:
+ id: "PAPER"
+ name: "&rPrevious Page"
+ lore:
+  - "&r&7Click me to open the previous page"
+
+#StaffCategoryFiveTicketsGUI_CurrentPage:
+#This can't be configured as of now. Sorry.
+
+StaffCategoryFiveTicketsGUI_NextPage:
+ id: "PAPER"
+ name: "&rNext Page"
+ lore:
+  - "&r&7Click me to open the next page"
+
+StaffCategoryFiveTicketsGUI_Book:
+ id: "BOOK"
+ name: "&r&6&lExplanation"
+ lore:
+  - "&r&7This GUI holds all open %categoryfive_lowercase% tickets."
+  - "&r&7Click on any of them to make changes or view more details."
+  - "&r&7You can also click the back button to return to the main menu."
+
+StaffCategoryFiveTicketsGUI_Filler:
+ id: "GRAY_STAINED_GLASS_PANE"
+ name: " "
+ 
+##########################################################
+#                   Ticket View Setup                    #
+##########################################################
+
+#TicketViewGUI_Name:
+#This isn't currently configurable sorry
+
+TicketViewGUI_PlayerSubmittedByUnclosed:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&lSubmitted By: &r%submittedby%"
+ lore:
+  - "&r&lOn &r%submissiondate%"
+  
+TicketViewGUI_PlayerSubmittedByClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&lSubmitted By: &r%submittedby%"
+ lore:
+  - "&r&lOn &r%submissiondate%"
+  
+TicketViewGUI_StaffSubmittedByUnclosed:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&lSubmitted By: &r%submittedby%"
+ lore:
+  - "&r&lOn &r%submissiondate%"
+  - "&r&7Click me to whisper to the player"
+  
+TicketViewGUI_StaffSubmittedByClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&lSubmitted By: &r%submittedby%"
+ lore:
+  - "&r&lOn &r%submissiondate%"
+  - "&r&7Click me to whisper to the player"
+  
+TicketViewGUI_PlayerCategoryUnclosed:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&lCategory"
+ lore:
+  - "&r%category%"
+  
+TicketViewGUI_PlayerCategoryClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&lCategory"
+ lore:
+  - "&r%category%"
+  
+TicketViewGUI_StaffCategoryUnclosed:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&lCategory"
+ lore:
+  - "&r%category%"
+  
+TicketViewGUI_StaffCategoryClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&lCategory"
+ lore:
+  - "&r%category%"
+  
+TicketViewGUI_PlayerServerUnclosed:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&lServer"
+ lore:
+  - "&r%server%"
+  
+TicketViewGUI_PlayerServerClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&lServer"
+ lore:
+  - "&r%server%"
+  
+TicketViewGUI_StaffServerUnclosed:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&lServer"
+ lore:
+  - "&r%server%"
+  
+TicketViewGUI_StaffServerClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&lServer"
+ lore:
+  - "&r%server%"
+  
+TicketViewGUI_PlayerImportanceUnclosed:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&lImportance"
+ lore:
+  - "&r%importance%"
+  
+TicketViewGUI_PlayerImportanceClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&lImportance"
+ lore:
+  - "&r%importance%"
+  
+TicketViewGUI_StaffImportanceUnclosed:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&lImportance"
+ lore:
+  - "&r%importance%"
+  
+TicketViewGUI_StaffImportanceClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&lImportance"
+ lore:
+  - "&r%importance%"
+  
+TicketViewGUI_PlayerMessagesUnclosed:
+ id: "YELLOW_STAINED_GLASS_PANE"
+ name: "&r&n&lMessages:"
+ lore:
+  - "%messages%"
+  
+TicketViewGUI_PlayerMessagesClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&n&lMessages:"
+ lore:
+  - "%messages%"
+  
+TicketViewGUI_StaffMessagesUnclosed:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&n&lMessages:"
+ lore:
+  - "%messages%"
+  - "&r&7Click me to add a message"
+  
+TicketViewGUI_StaffMessagesClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&n&lMessages:"
+ lore:
+  - "%messages%"
+  - "&r&7Click me to add a message"
+  
+TicketViewGUI_PlayerClosedUnclosed:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&lClosed"
+ lore:
+  - "&r%closed%"
+  
+TicketViewGUI_PlayerClosedClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&lClosed"
+ lore:
+  - "&r%closed%"
+  
+TicketViewGUI_StaffClosedUnclosed:
+ id: "GREEN_STAINED_GLASS_PANE"
+ name: "&r&lClosed"
+ lore:
+  - "&r%closed%"
+  
+TicketViewGUI_StaffClosedClosed:
+ id: "RED_STAINED_GLASS_PANE"
+ name: "&r&lClosed"
+ lore:
+  - "&r%closed%"
+  
+TicketViewGUI_PlayerBackUnclosed:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+  
+TicketViewGUI_PlayerBackClosed:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+  
+TicketViewGUI_StaffBackUnclosed:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+  
+TicketViewGUI_StaffBackClosed:
+ id: "BARRIER"
+ name: "&r&4Back"
+ lore:
+  - "&r&7Click me to go back"
+
+##########################################################
+#                      Permissions                       #
+##########################################################
+
+#ticketmanager.admin - Allows opening of admin ticket menu
+
+#ticketmanager.notify - Notifies player on creation of ticket
+
+#ticketmanager.bancreation - Bans players with this perm from creating tickets
+#If you have a staff member with * perms, just include this with a minus sign
+#in front of it to take it away. Ops are automatically exempt as well as
+#players with ticketmanager.admin so don't worry about them
+
+##########################################################
+#                        Version                         #
+##########################################################
+
+VERSION: 5
+#Do not touch this. No touchy.

@@ -1,0 +1,52 @@
+Help:
+ - "[&cTM&r] Commands:"
+ - "/ticket &7- Open the player GUI."
+ - "/ticket admin &7- Open the staff GUI."
+ - "/ticket reload &7- Yunno."
+
+Player_Closed_Ticket:
+ - "[&cTM&r] Permanently closed ticket."
+#CAN USE TICKET PLACEHOLDERS
+
+PLayer_Closed_Ticket_Staff_Notification:
+ - "[&cTM&r] %player% has closed their ticket %id%."
+#CAN USE TICKET PLACEHOLDERS
+
+Staff_Closed_Ticket:
+ - "[&cTM&r] Permanently closed ticket."
+#CAN USE TICKET PLACEHOLDERS
+
+Staff_Closed_Ticket_Staff_Notification:
+ - "[&cTM&r] %player% closed %submittedby%'s ticket %id%."
+#CAN USE TICKET PLACEHOLDERS
+
+Create_Ticket_Message_Prompt:
+ - "[&cTM&r] Please type your message now."
+
+Create_Ticket_Successful:
+ - "[&cTM&r] Ticket created successfully!"
+#CAN USE TICKET PLACEHOLDERS
+
+Create_Ticket_Staff_Notification:
+ - "[&cTM&r] %player% has submitted a level %importance% %category% ticket."
+#CAN USE TICKET PLACEHOLDERS
+
+Staff_Add_Message:
+ - "[&cTM&r] Please type the message to be added."
+#CAN USE TICKET PLACEHOLDERS
+
+Notify_Player_Staff_Add_Message:
+ - "[&cTM&r] %player% has added to ticket %id%."
+#CAN USE TICKET PLACEHOLDERS
+
+Notify_Player_Staff_Closed_Ticket:
+ - "[&cTM&r] %player% has closed ticket %id%."
+#CAN USE TICKET PLACEHOLDERS
+
+Staff_Prompt_Whisper:
+ - "[&cTM&r] Please type the message to whisper."
+#CAN USE TICKET PLACEHOLDERS
+
+Staff_Prompt_Whisper_Offline:
+ - "[&cTM&r] That player is offline."
+#CAN USE TICKET PLACEHOLDERS
