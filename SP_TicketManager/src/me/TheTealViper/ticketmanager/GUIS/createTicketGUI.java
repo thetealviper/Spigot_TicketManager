@@ -235,8 +235,25 @@ public class createTicketGUI implements Listener{
 			String server = e.getPlayer().getWorld().getName() + " (" + e.getPlayer().getLocation().getBlockX() + "," + e.getPlayer().getLocation().getBlockY() + "," + e.getPlayer().getLocation().getBlockZ() + ")";
 			String closed = "false";
 			String ticketID = "t" + TicketManager.tickets.size();
+			String message = e.getMessage();
 			List<String> messages = new ArrayList<String>();
-			messages.add("[" + e.getPlayer().getName() + "] " + e.getMessage());
+			int previousSpaceIndex = 0, nextSpaceIndex = 0;
+			for(int i = 0;i < message.length();i++) {
+				if(message.charAt(i) == ' ') {
+					previousSpaceIndex = nextSpaceIndex;
+					nextSpaceIndex = i;
+					if(nextSpaceIndex > TicketManager.plugin.getConfig().getInt("Ticket_Message_Word_Wrap_Length")) {
+						messages.add(message.substring(0, previousSpaceIndex+1));
+						message = message.substring(previousSpaceIndex+1);
+						previousSpaceIndex = 0; nextSpaceIndex = 0;
+						i = 0;
+					}
+				}
+			}
+			if(message != "") {
+				messages.add(message);
+			}
+//			messages.add("[" + e.getPlayer().getName() + "] " + e.getMessage());
 			Ticket t = new Ticket(submittedBy, submissionDate, category, server, closed, ticketID, Integer.valueOf(importance), messages);
 			TicketManager.tickets.add(t);
 			t.save();

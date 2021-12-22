@@ -1,14 +1,11 @@
 package me.TheTealViper.ticketmanager.Utils;
 
+import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import org.bukkit.Bukkit;
-
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+import java.sql.Statement;
 
 public class SQLShit {
 	public Connection connection = null;

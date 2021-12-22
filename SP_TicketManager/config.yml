@@ -40,6 +40,8 @@ Category_Five: "Other"
 
 Whisper_Command: "whisper"
 
+Ticket_Message_Word_Wrap_Length: 40
+
 ##########################################################
 #                  Player Ticket Setup                   #
 ##########################################################
@@ -785,5 +787,5 @@ TicketViewGUI_StaffBackClosed:
 #                        Version                         #
 ##########################################################
 
-VERSION: 5
+VERSION: 6
 #Do not touch this. No touchy.

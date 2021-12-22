@@ -2,8 +2,8 @@ package me.TheTealViper.ticketmanager.Utils;
 
 import java.util.UUID;
 
+import org.apache.commons.codec.binary.Base64;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.libs.org.apache.commons.codec.binary.Base64;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
