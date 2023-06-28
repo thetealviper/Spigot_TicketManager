@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.player.PlayerChatEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import me.TheTealViper.ticketmanager.Ticket;
 import me.TheTealViper.ticketmanager.TicketManager;
@@ -24,6 +24,7 @@ public class ticketGUI implements Listener{
 	public static Map<Player, Ticket> whisperListener = new HashMap<Player, Ticket>();
 	public static Map<Player, String> whisperData = new HashMap<Player, String>();
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onInventory(InventoryClickEvent e){
 		if(e.getClickedInventory() != null && e.getClickedInventory().equals(e.getInventory())){
@@ -139,13 +140,14 @@ public class ticketGUI implements Listener{
 	}
 	
 	@EventHandler
-	public void onChat(PlayerChatEvent e){
+	public void onChat(AsyncPlayerChatEvent e){
 		if(messageListener.keySet().contains(e.getPlayer())){
 			e.setCancelled(true);
 			Ticket t = messageListener.get(e.getPlayer());
 			t.messages.add("[" + e.getPlayer().getName() + "] " + TicketManager.makeColors(e.getMessage().replaceAll(";", "")));
 			t.save();
 			t.openStaffGUI(e.getPlayer());
+			@SuppressWarnings("deprecation")
 			OfflinePlayer offPlayer = Bukkit.getOfflinePlayer(t.submittedBy);
 			if(offPlayer.isOnline()){
 				for(String s : messageHandler.getNotifyPlayerStaffAddMessage(e.getPlayer(), t)){
@@ -155,10 +157,16 @@ public class ticketGUI implements Listener{
 			messageListener.remove(e.getPlayer());
 		}else if(whisperListener.keySet().contains(e.getPlayer())){
 			e.setCancelled(true);
-			e.getPlayer().chat("/" + plugin.getConfig().getString("Whisper_Command") + " " + whisperData.get(e.getPlayer()) + " " + e.getMessage());
-			whisperListener.get(e.getPlayer()).openStaffGUI(e.getPlayer());
+			final Ticket ticket = whisperListener.get(e.getPlayer());
+			final String cmd = plugin.getConfig().getString("Whisper_Command") + " " + whisperData.get(e.getPlayer()) + " " + e.getMessage();
 			whisperData.remove(e.getPlayer());
 			whisperListener.remove(e.getPlayer());
+			Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {public void run() {
+				Bukkit.dispatchCommand(e.getPlayer(), cmd);
+				ticket.openStaffGUI(e.getPlayer());
+//				e.getPlayer().performCommand(plugin.getConfig().getString(plugin.getConfig().getString("Whisper_Command") + " " + whisperData.get(e.getPlayer()) + " " + e.getMessage()));
+			}}, 0);
+//			e.getPlayer().chat("/" + plugin.getConfig().getString("Whisper_Command") + " " + whisperData.get(e.getPlayer()) + " " + e.getMessage()); //Deprecated with stupid MC 1.19 chat update
 		}
 	}
 	

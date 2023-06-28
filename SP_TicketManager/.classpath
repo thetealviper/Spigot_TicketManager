@@ -6,16 +6,16 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/commons-lang3-3.12.0.jar"/>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/gson-2.8.8.jar"/>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/guava-31.0.1-jre.jar"/>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/mysql-connector-java-8.0.27.jar"/>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/snakeyaml-1.28.jar"/>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/spigot-api-1.18.1-R0.1-SNAPSHOT.jar"/>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/sqlite-jdbc-3.36.0.3.jar"/>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/authlib-3.2.38.jar"/>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/commons-codec-1.11.jar"/>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/commons-io-2.11.0.jar"/>
-	<classpathentry kind="lib" path="D:/My Documents/Minecraft Stuff/1.18 Plugin Tester/bundler/libraries/datafixerupper-4.0.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/authlib-4.0.43.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/commons-io-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/commons-lang3-3.12.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/datafixerupper-6.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/gson-2.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/guava-31.1-jre.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/mysql-connector-j-8.0.33.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/snakeyaml-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/spigot-api-1.20.1-R0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Aaron/Documents/Minecraft Stuff/1.20.1 Server/bundler/libraries/sqlite-jdbc-3.42.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

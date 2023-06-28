@@ -2,6 +2,7 @@ package me.TheTealViper.ticketmanager;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,11 +13,10 @@ import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandMap;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.TheTealViper.ticketmanager.GUIS.categoryBugGUI;
@@ -76,6 +76,7 @@ public class TicketManager extends JavaPlugin implements Listener{
 			data = new PluginFile(this, "tickets.data");
 		}
 		
+		//Register event handlers
 		Bukkit.getPluginManager().registerEvents(new categoryBugGUI(), this);
 		Bukkit.getPluginManager().registerEvents(new categoryChatAbuseGUI(), this);
 		Bukkit.getPluginManager().registerEvents(new categoryOtherGUI(), this);
@@ -89,6 +90,31 @@ public class TicketManager extends JavaPlugin implements Listener{
 		Bukkit.getPluginManager().registerEvents(new staffOpenTicketsGUI(), this);
 		Bukkit.getPluginManager().registerEvents(new staffClosedTicketsGUI(), this);
 		Bukkit.getPluginManager().registerEvents(new ticketGUI(), this);
+		//Register command aliases
+		try {
+			final Field bukkitCommandMap = Bukkit.getServer().getClass().getDeclaredField("commandMap");
+		    bukkitCommandMap.setAccessible(true);
+		    CommandMap commandMap = (CommandMap) bukkitCommandMap.get(Bukkit.getServer());
+			List<Command> commands = new ArrayList<>();
+			for (String cmd : plugin.getConfig().getStringList("Command_Aliases")) {
+				commands.add(new Command(cmd) {public boolean execute(CommandSender arg0, String arg1, String[] arg2) {
+					return plugin.onCommand(arg0, this, arg1, arg2);
+				}});
+			}
+		    commandMap.registerAll("TicketManager", commands);
+		} catch (IllegalArgumentException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IllegalAccessException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (NoSuchFieldException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		loadTickets();
 		
@@ -110,8 +136,8 @@ public class TicketManager extends JavaPlugin implements Listener{
         if(sender instanceof Player){
             Player p = (Player) sender;
             boolean explain = false;
-            boolean perms = false;
-            if(label.equalsIgnoreCase("ticket")){
+//            boolean perms = false;
+            if(label.equalsIgnoreCase("ticket") || true){ //There is only one label of importance so any commands running this function should pass
                 if(args.length == 0){
                     mainGUI.open(p);
                 }else if(args.length == 1){
@@ -165,15 +191,6 @@ public class TicketManager extends JavaPlugin implements Listener{
 		
 		tickets.clear();
 		loadTickets();
-	}
-	
-	@EventHandler(ignoreCancelled = false)
-	public void onCommand(PlayerCommandPreprocessEvent e){
-		List<String> aliases = getConfig().contains("Command_Aliases") ? getConfig().getStringList("Command_Aliases") : new ArrayList<String>();
-		if(aliases.contains(e.getMessage().split(" ")[0].replace("/", ""))){
-			e.setCancelled(true);
-			e.getPlayer().chat(e.getMessage().replace(e.getMessage().split(" ")[0], "/ticket"));
-		}
 	}
 	
 	public static void loadTickets(){

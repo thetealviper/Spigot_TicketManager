@@ -76,7 +76,8 @@ public enum Skull {
         }
         byte[] encodedData = base64.encode(String.format("{textures:{SKIN:{url:\"%s\"}}}", url).getBytes());
         propertyMap.put("textures", new Property("textures", new String(encodedData)));
-        ItemStack head = new ItemStack(Material.PLAYER_HEAD, 1, (short) 3);
+        @SuppressWarnings("deprecation")
+		ItemStack head = new ItemStack(Material.PLAYER_HEAD, 1, (short) 3);
         ItemMeta headMeta = head.getItemMeta();
         Class<?> headMetaClass = headMeta.getClass();
         Reflections.getField(headMetaClass, "profile", GameProfile.class).set(headMeta, profile);

@@ -23,6 +23,7 @@ import org.bukkit.material.MaterialData;
 import me.TheTealViper.ticketmanager.Ticket;
 import me.TheTealViper.ticketmanager.TicketManager;
 
+@SuppressWarnings("deprecation")
 public class ItemCreator implements Listener{
 	public static TicketManager plugin = null;
 	private static List<Material> durMats = new ArrayList<Material>();
@@ -300,14 +301,6 @@ public class ItemCreator implements Listener{
 		while(s.contains(dood))
 			s = s.replace(dood, t.ticketID);
 		return StringUtils.makeColors(s);
-	}
-	
-	private static int formatLore(int index, List<String> lore, Ticket t){
-		lore.remove(index);
-		for(int i = 0;i < t.messages.size();i++){
-			lore.add(formatString(t.messages.get(i), t));
-		}
-		return index + t.messages.size() - 1;
 	}
 	
 	private static void loadDurMats(){

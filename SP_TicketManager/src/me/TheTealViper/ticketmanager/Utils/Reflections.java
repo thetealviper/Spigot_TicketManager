@@ -347,7 +347,8 @@ public final class Reflections {
         return clazz;
     }
 
-    public static <T> T newInstance(Class<T> type) {
+    @SuppressWarnings("deprecation")
+	public static <T> T newInstance(Class<T> type) {
         try {
             return type.newInstance();
         } catch (Exception e) {

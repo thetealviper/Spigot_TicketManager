@@ -6,10 +6,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 
 public class StringUtils {
-
-	// String constants. TODO Change them to something unique to avoid conflict with other plugins!
-	private static final String SEQUENCE_HEADER = "" + ChatColor.RESET + ChatColor.UNDERLINE + ChatColor.RESET;
-	private static final String SEQUENCE_FOOTER = "" + ChatColor.RESET + ChatColor.ITALIC + ChatColor.RESET;
 	
 	public static String convertToInvisibleString(String s) {
         String hidden = "";
@@ -18,7 +14,7 @@ public class StringUtils {
     }
 	public static String convertBack(String s){
 		//String converted = ChatColor.stripColor(s);
-		String converted = s.replaceAll("§", "");
+		String converted = s.replaceAll("ï¿½", "");
 		return converted;
 	}
 	
