@@ -146,7 +146,9 @@ public class ticketGUI implements Listener{
 			Ticket t = messageListener.get(e.getPlayer());
 			t.messages.add("[" + e.getPlayer().getName() + "] " + TicketManager.makeColors(e.getMessage().replaceAll(";", "")));
 			t.save();
-			t.openStaffGUI(e.getPlayer());
+			Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {public void run() {
+				t.openStaffGUI(e.getPlayer());
+			}}, 0);
 			@SuppressWarnings("deprecation")
 			OfflinePlayer offPlayer = Bukkit.getOfflinePlayer(t.submittedBy);
 			if(offPlayer.isOnline()){
