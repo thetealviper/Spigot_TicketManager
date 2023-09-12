@@ -11,8 +11,8 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import me.TheTealViper.ticketmanager.Utils.SQLShit.TableSlot;
-import me.TheTealViper.ticketmanager.Utils.StringUtils;
+import me.TheTealViper.ticketmanager.SQLShit.TableSlot;
+import me.TheTealViper.ticketmanager.utils.StringUtils;
 
 public class Ticket{
 	public static String TICKETPLAYERIDENTIFIER = StringUtils.convertToInvisibleString("TSh"), TICKETSTAFFIDENTIFIER = StringUtils.convertToInvisibleString("TSg");

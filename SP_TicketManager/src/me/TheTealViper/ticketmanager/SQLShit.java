@@ -1,4 +1,4 @@
-package me.TheTealViper.ticketmanager.Utils;
+package me.TheTealViper.ticketmanager;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;

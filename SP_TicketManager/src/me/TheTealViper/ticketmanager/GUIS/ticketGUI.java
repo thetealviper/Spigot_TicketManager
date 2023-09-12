@@ -12,11 +12,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+import me.TheTealViper.ticketmanager.GuiClick;
 import me.TheTealViper.ticketmanager.Ticket;
 import me.TheTealViper.ticketmanager.TicketManager;
 import me.TheTealViper.ticketmanager.itemHandler;
 import me.TheTealViper.ticketmanager.messageHandler;
-import me.TheTealViper.ticketmanager.Utils.GuiClick;
 
 public class ticketGUI implements Listener{
 	public static TicketManager plugin = null;

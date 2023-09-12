@@ -1,4 +1,4 @@
-package me.TheTealViper.ticketmanager.Utils;
+package me.TheTealViper.ticketmanager;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 

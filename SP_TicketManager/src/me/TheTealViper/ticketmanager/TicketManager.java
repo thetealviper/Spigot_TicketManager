@@ -17,7 +17,6 @@ import org.bukkit.command.CommandMap;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import me.TheTealViper.ticketmanager.GUIS.categoryBugGUI;
 import me.TheTealViper.ticketmanager.GUIS.categoryChatAbuseGUI;
@@ -32,12 +31,10 @@ import me.TheTealViper.ticketmanager.GUIS.openTicketsGUI;
 import me.TheTealViper.ticketmanager.GUIS.staffClosedTicketsGUI;
 import me.TheTealViper.ticketmanager.GUIS.staffOpenTicketsGUI;
 import me.TheTealViper.ticketmanager.GUIS.ticketGUI;
-import me.TheTealViper.ticketmanager.Utils.EnableShit;
-import me.TheTealViper.ticketmanager.Utils.ItemCreator;
-import me.TheTealViper.ticketmanager.Utils.PluginFile;
-import me.TheTealViper.ticketmanager.Utils.SQLShit;
+import me.TheTealViper.ticketmanager.utils.PluginFile;
+import me.TheTealViper.ticketmanager.utils.UtilityEquippedJavaPlugin;
 
-public class TicketManager extends JavaPlugin implements Listener{
+public class TicketManager extends UtilityEquippedJavaPlugin implements Listener{
 	public static String prefix = makeColors("[&cTM&r] ");
 	public static List<Ticket> tickets = new ArrayList<Ticket>();
 	public static TicketManager plugin = null;
@@ -61,12 +58,11 @@ public class TicketManager extends JavaPlugin implements Listener{
 	
 	public void onEnable(){
 		plugin = this;
-		EnableShit.handleOnEnable(this, this, "-1");
+		StartupPlugin(this, "50392");
 		useSQL = getConfig().getBoolean("Use_SQL");
 		GUIClick = getConfig().getBoolean("GUI_Click");
 		itemHandler.plugin = this;
 		createTicketGUI.plugin = this;
-		ItemCreator.plugin = this;
 		ticketGUI.plugin = this;
 		
 		if(useSQL){

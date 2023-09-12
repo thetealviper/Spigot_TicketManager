@@ -14,11 +14,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 
+import me.TheTealViper.ticketmanager.GuiClick;
 import me.TheTealViper.ticketmanager.Ticket;
 import me.TheTealViper.ticketmanager.TicketManager;
 import me.TheTealViper.ticketmanager.itemHandler;
-import me.TheTealViper.ticketmanager.Utils.GuiClick;
-import me.TheTealViper.ticketmanager.Utils.StringUtils;
+import me.TheTealViper.ticketmanager.utils.StringUtils;
 
 public class categoryOtherGUI implements Listener{
 	public static String OPENIDENTIFIER = StringUtils.convertToInvisibleString("TSw");

@@ -6,7 +6,7 @@ import java.util.List;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import me.TheTealViper.ticketmanager.Utils.StringUtils;
+import me.TheTealViper.ticketmanager.utils.StringUtils;
 
 public class messageHandler {
 	static YamlConfiguration message = YamlConfiguration.loadConfiguration(new File("plugins/TicketManager/messages.yml"));

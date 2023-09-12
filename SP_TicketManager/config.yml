@@ -19,6 +19,52 @@
 # - Version                                              #
 ##########################################################
 
+#########################################################################################################################################
+#                 Item Format Explained                                                                                                 #
+#    * id: DIRT                                                                                                                         #
+#	 * amount: 1                                                                                                                        #
+#	 * name: "Dirt"                                                                                                                     #
+#	 * lore:                                                                                                                            #
+#	 *  - "Lore Line 1"                                                                                                                 #
+#	 *  - "Lore Line 2"                                                                                                                 #
+#	 * enchantments:                                                                                                                    #
+#	 * 	- "arrowdamage:1"                                                                                                               #
+#	 *  - "arrowfire:1"                                                                                                                 #
+#	 *  - "arrowinfinite:1"                                                                                                             #
+#	 *  - "arrowknockback:1"                                                                                                            #
+#	 *  - "damage:1"                                                                                                                    #
+#	 *  - "digspeed:1"                                                                                                                  #
+#	 *  - "durability:1"                                                                                                                #
+#	 *  - "fireaspect:1"                                                                                                                #
+#	 *  - "knockback:1"                                                                                                                 #
+#	 *  - "lootbonusblock:1"                                                                                                            #
+#	 *  - "lootbonusmob:1"                                                                                                              #
+#	 *  - "luck:1"                                                                                                                      #
+#	 *  - "protectionfall:1"                                                                                                            #
+#	 *  - "protectionfire:1"                                                                                                            #
+#	 *  - "silktouch:1"                                                                                                                 #
+#	 * tags:                                                                                                                            #
+#	 *  - "textureskull:SKINVALUE"                                                                                                      #
+#	 *  - "playerskull:PLAYERNAME"                                                                                                      #
+#	 *  - "vanilladurability:256"                                                                                                       #
+#	 *  - "unbreakable:true"                                                                                                            #
+#	 *  - "custommodeldata:1234567"                                                                                                     #
+#	 *  - "fakeenchant:true" //Adds enchant glow to item without any enchantments                                                       #
+#	 * flags:                                                                                                                           #
+#	 *  - "HIDE_ATTRIBUTES"                                                                                                             #
+#	 *  - "HIDE_DESTROYS"                                                                                                               #
+#	 *  - "HIDE_ENCHANTS"                                                                                                               #
+#	 *  - "HIDE_PLACED_ON"                                                                                                              #
+#	 *  - "HIDE_POTION_EFFECTS"                                                                                                         #
+#	 *  - "HIDE_UNBREAKABLE"                                                                                                            #
+#	 * attributes:                                                                                                                      #
+#	 *  - "ATTRIBUTE:VALUE:OPERATION"                                                                                                   #
+#	 *  - "ATTRIBUTE:VALUE:OPERATION:SLOT"                                                                                              #
+#	 *  - ATTRIBUTE NAMES FOUND @ https://hub.spigotmc.org/javadocs/spigot/org/bukkit/attribute/Attribute.html                          #
+#	 *  - ATTRIBUTE OPERATIONS FOUND @ https://hub.spigotmc.org/javadocs/spigot/org/bukkit/attribute/AttributeModifier.Operation.html   #
+#	 *  - ATTRIBUTE SLOTS FOUND @ https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/EquipmentSlot.html                      #
+#########################################################################################################################################
+
 Command_Aliases:
  - tm
  - report
@@ -787,5 +833,5 @@ TicketViewGUI_StaffBackClosed:
 #                        Version                         #
 ##########################################################
 
-VERSION: 6
+VERSION: 7
 #Do not touch this. No touchy.

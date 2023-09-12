@@ -18,12 +18,12 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.inventory.Inventory;
 
+import me.TheTealViper.ticketmanager.GuiClick;
 import me.TheTealViper.ticketmanager.Ticket;
 import me.TheTealViper.ticketmanager.TicketManager;
 import me.TheTealViper.ticketmanager.itemHandler;
 import me.TheTealViper.ticketmanager.messageHandler;
-import me.TheTealViper.ticketmanager.Utils.GuiClick;
-import me.TheTealViper.ticketmanager.Utils.StringUtils;
+import me.TheTealViper.ticketmanager.utils.StringUtils;
 
 public class createTicketGUI implements Listener{
 	public static String CREATEIDENTIFIER = StringUtils.convertToInvisibleString("TSq");
