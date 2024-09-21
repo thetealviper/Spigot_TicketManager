@@ -48,27 +48,55 @@ public class LoadEnhancedItemstackFromConfig implements Listener{
 	 *  - "1"
 	 *  - "2"
 	 * enchantments:
-	 * 	- "arrowdamage:1"
-	 *  - "arrowfire:1"
-	 *  - "arrowinfinite:1"
-	 *  - "arrowknockback:1"
-	 *  - "damage:1"
-	 *  - "digspeed:1"
-	 *  - "durability:1"
+	 *  - UPDATED ENCHANTMENT LIST FOUND @ https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/enchantments/Enchantment.html
+	 * 	- "aquaaffinity:1"
+	 *  - "baneofarthropods:1"
+	 *  - "blastprotection:1"
+	 *  - "channeling:1"
+	 *  - "cleaving:1"
+	 *  - "curseofbinding:1"
+	 *  - "curseofvanishing:1"
+	 *  - "depthstrider:1"
+	 *  - "efficiency:1"
+	 *  - "featherfalling:1"
 	 *  - "fireaspect:1"
+	 *  - "fireprotection:1"
+	 *  - "flame:1"
+	 *  - "fortune:1"
+	 *  - "frostwalker:1"
+	 * 	- "impaling:1"
+	 *  - "infinity:1"
 	 *  - "knockback:1"
-	 *  - "lootbonusblock:1"
-	 *  - "lootbonusmob:1"
-	 *  - "luck:1"
-	 *  - "protectionfall:1"
-	 *  - "protectionfire:1"
+	 *  - "looting:1"
+	 *  - "loyalty:1"
+	 *  - "luckofthesea:1"
+	 *  - "lure:1"
+	 *  - "mending:1"
+	 *  - "multishot:1"
+	 *  - "piercing:1"
+	 *  - "power:1"
+	 *  - "projectileprotection:1"
+	 *  - "protection:1"
+	 *  - "punch:1"
+	 *  - "quickcharge:1"
+	 * 	- "respiration:1"
+	 *  - "riptide:1"
+	 *  - "sharpness:1"
 	 *  - "silktouch:1"
+	 *  - "smite:1"
+	 *  - "soulspeed:1"
+	 *  - "sweepingedge:1"
+	 *  - "swiftsneak:1"
+	 *  - "thorns:1"
+	 *  - "unbreaking:1"
+	 *  - "windburst:1"
 	 * tags:
 	 *  - "textureskull:SKINVALUE"
 	 *  - "playerskull:PLAYERNAME"
 	 *  - "vanilladurability:256"
 	 *  - "unbreakable:true"
 	 *  - "custommodeldata:1234567"
+	 *  - "enchantglow:true"
 	 *  - "damage:20" //WIP
 	 *  - "forcestack:5" //WIP
 	 * flags:
@@ -131,54 +159,16 @@ public class LoadEnhancedItemstackFromConfig implements Listener{
 		if(sec.contains("enchantments")) {
 			List<String> enchantmentStrings = sec.getStringList("enchantments");
 			for(String enchantmentString : enchantmentStrings) {
-				String enchantmentName = enchantmentString.split(":")[0];
+				String enchantmentName = enchantmentString.split(":")[0].replaceAll(" ", "").replaceAll("_", "").toLowerCase();
 				int enchantmentLevel = Integer.valueOf(enchantmentString.split(":")[1]);
-				switch(enchantmentName) {
-					case "arrowdamage":
-						meta.addEnchant(Enchantment.ARROW_DAMAGE, enchantmentLevel, true);
+				//Loop through enchantments, see if name matches, apply if does
+				for (Enchantment ench : Enchantment.values()) {
+					String enchantmentNameParsed = ench.toString().split(":")[1];
+					enchantmentNameParsed = enchantmentNameParsed.substring(0, enchantmentNameParsed.length()-1);
+					if (enchantmentNameParsed.replaceAll(" ", "").replaceAll("_", "").toLowerCase().equals(enchantmentName)) {
+						meta.addEnchant(ench, enchantmentLevel, true);
 						break;
-					case "arrowfire":
-						meta.addEnchant(Enchantment.ARROW_FIRE, enchantmentLevel, true);
-						break;
-					case "arrowinfinite":
-						meta.addEnchant(Enchantment.ARROW_INFINITE, enchantmentLevel, true);
-						break;
-					case "arrowknockback":
-						meta.addEnchant(Enchantment.ARROW_KNOCKBACK, enchantmentLevel, true);
-						break;
-					case "damage":
-						meta.addEnchant(Enchantment.DAMAGE_ALL, enchantmentLevel, true);
-						break;
-					case "digspeed":
-						meta.addEnchant(Enchantment.DIG_SPEED, enchantmentLevel, true);
-						break;
-					case "durability":
-						meta.addEnchant(Enchantment.DURABILITY, enchantmentLevel, true);
-						break;
-					case "fireaspect":
-						meta.addEnchant(Enchantment.FIRE_ASPECT, enchantmentLevel, true);
-						break;
-					case "knockback":
-						meta.addEnchant(Enchantment.KNOCKBACK, enchantmentLevel, true);
-						break;
-					case "lootbonusblock":
-						meta.addEnchant(Enchantment.LOOT_BONUS_BLOCKS, enchantmentLevel, true);
-						break;
-					case "lootbonusmob":
-						meta.addEnchant(Enchantment.LOOT_BONUS_MOBS, enchantmentLevel, true);
-						break;
-					case "luck":
-						meta.addEnchant(Enchantment.LUCK, enchantmentLevel, true);
-						break;
-					case "protectionfall":
-						meta.addEnchant(Enchantment.PROTECTION_FALL, enchantmentLevel, true);
-						break;
-					case "protectionfire":
-						meta.addEnchant(Enchantment.PROTECTION_FALL, enchantmentLevel, true);
-						break;
-					case "silktouch":
-						meta.addEnchant(Enchantment.SILK_TOUCH, enchantmentLevel, true);
-						break;
+					}
 				}
 			}
 			modifiedMetaSoApply = true;
@@ -220,6 +210,9 @@ public class LoadEnhancedItemstackFromConfig implements Listener{
 						break;
 					case "custommodeldata":
 						meta.setCustomModelData(Integer.valueOf(value));
+						break;
+					case "enchantglow":
+						meta.setEnchantmentGlintOverride(true);
 						break;
 				}
 			}
